@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Company Project And Employee Detail</h1>
+        </div>
+    </div>
+    <div class="row">
+        <dov class="col-md-12">
+            <table class="table table-striped">
+                <thead class="thead-inverse">
+                <tr>
+                    <th>Employee</th>
+                    <th>Project</th>
+                </tr>
+                </thead>
+                <tbody class='table-striped'>
+                <tr>
+                    <td>{{ Employee }}</td>
+                    <td>{{ Project }}</td>
+                </tr>
+                </tbody>
+            </table>
+        </dov>
+        {% block sidebar %}
+        <ul class="sidebar-nav">
+            <li><a href="{% url 'Project' %}">Project Detail</a></li>
+            <li><a href="{% url 'Employee' %}">Employee Detail</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}
