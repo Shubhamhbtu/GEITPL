@@ -1,0 +1,42 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Project Detail</h1>
+        </div>
+    </div>
+    <div class="row">
+        <dov class="col-md-12">
+            <table class="table table-striped">
+                <thead class="thead-inverse">
+                <tr>
+                    <th>Project Name</th>
+                    <th>Start date</th>
+                    <th>End date</th>
+                    <th>Duration</th>
+                    <th>Count of Assigned Empoyeee</th>
+                </tr>
+                </thead>
+                <tbody class='table-striped'>
+                 {% for project in projects %}
+                <tr>
+                    <td>{{ project.name }}</td>
+                    <td>{{ project.start_date }}</td>
+                    <td>{{ project.end_date }}</td>
+                    <td>{{project.duration}} Days</td>
+                    <td>{{project.employee_project.count}}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </dov>
+        {% block sidebar %}
+        <ul class="sidebar-nav">
+            <li><a href="{% url 'Employee' %}">Employee Detail</a></li>
+            <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+        </ul>
+        {% endblock %}
+    </div>
+</div>
+{% endblock %}
